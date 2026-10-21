@@ -31,6 +31,8 @@ def read_valid(lines: list[str]) -> list[dict]:
         except ValueError:
             cnt_f += 1
             continue
+        except:
+            continue
     print(cnt_t)
     print(cnt_f)
     return ls
