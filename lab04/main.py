@@ -6,4 +6,4 @@ cnt_t, cnt_f = 0, 0
 print('Ввод:')
 lines = sys.stdin.read().splitlines()
 print('Вывод:')
-print(warmest_city(average_by_city(read_valid(lines))))
+print(warmest_city(read_valid(lines)))
