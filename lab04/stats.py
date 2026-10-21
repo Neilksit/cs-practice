@@ -53,7 +53,7 @@ def average_by_city(records: list[dict]) -> dict:
 
 
 def warmest_city(records: list[dict]) -> str:
-    d = records
+    d = average_by_city(records)
     mx = sorted(d.items(), key=lambda x:[-x[1], x[0]])[0]
 
     # return f'Город с наибольшей ср температурой: {mx[0]} со значением {mx[1]}'
