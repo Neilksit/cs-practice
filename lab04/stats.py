@@ -57,7 +57,7 @@ def warmest_city(records: list[dict]) -> str:
     mx = sorted(d.items(), key=lambda x:[-x[1], x[0]])[0]
 
     # return f'Город с наибольшей ср температурой: {mx[0]} со значением {mx[1]}'
-    return mx[1]
+    return mx[0]
 
 cnt_t, cnt_f = 0, 0
 # lines = sys.stdin.read().splitlines()
