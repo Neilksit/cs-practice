@@ -9,11 +9,11 @@ def parse_record(line: str) -> dict:
     if not city or not date:
         raise ValueError('Город или дата пустые!')
     try:
-        temp = float(temp)
+        temp = float(temp.strip())
     except ValueError:
         raise ValueError('В поле температуры записано не число!')
 
-    return {'city':city, 'temperature':temp, 'date':date}
+    return {'city':city.strip(), 'temperature':temp, 'date':date.strip()}
 
 
 def read_valid(lines: list[str]) -> list[dict]:
