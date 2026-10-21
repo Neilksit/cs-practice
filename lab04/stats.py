@@ -59,6 +59,13 @@ def warmest_city(records: list[dict]) -> str:
     # return f'Город с наибольшей ср температурой: {mx[0]} со значением {mx[1]}'
     return mx[0]
 
+def warmest_city1(records: list[dict]) -> str:
+    d = average_by_city(records)
+    mx = sorted(d.items(), key=lambda x:[-x[1], x[0]])[0]
+
+    # return f'Город с наибольшей ср температурой: {mx[0]} со значением {mx[1]}'
+    return mx[1]
+
 cnt_t, cnt_f = 0, 0
 # lines = sys.stdin.read().splitlines()
 # print(read_valid(lines))
