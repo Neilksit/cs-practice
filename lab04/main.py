@@ -1,5 +1,9 @@
-import stats
+from stats import average_by_city, read_valid, warmest_city
+import sys
 
+
+cnt_t, cnt_f = 0, 0
+print('Ввод:')
 lines = sys.stdin.read().splitlines()
-
-print(total[best] / count[best])
+print('Вывод:')
+print(warmest_city(lines))
