@@ -39,7 +39,6 @@ def read_valid(lines: list[str]) -> list[dict]:
 
 
 def average_by_city(records: list[dict]) -> dict:
-    records = read_valid(records)
     total = {}
     count = {}
     d = {}
@@ -54,7 +53,7 @@ def average_by_city(records: list[dict]) -> dict:
 
 
 def warmest_city(records: list[dict]) -> str:
-    d = average_by_city(records)
+    d = records
     mx = sorted(d.items(), key=lambda x:[-x[1], x[0]])[0]
 
     # return f'Город с наибольшей ср температурой: {mx[0]} со значением {mx[1]}'
