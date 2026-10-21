@@ -12,6 +12,8 @@ def parse_record(line: str) -> dict:
         temp = float(temp.strip())
     except ValueError:
         raise ValueError('В поле температуры записано не число!')
+    except:
+        raise ValueError('В поле температуры записано не число!')
 
     return {'city':city.strip(), 'temperature':temp, 'date':date.strip()}
 
