@@ -6,10 +6,19 @@ def count_by_extension(paths: list[str]) -> dict[str, int]:
     exts = []
     for p in paths:
         filename = Path(p).name
-        if "." in filename:
+        if "." in filename and not filename.startswith("."):
             ext = filename.rsplit(".", 1)[1].lower()
+            if not ext:
+                ext = ""
+        elif filename.count(".") > 1:
+            parts = filename.split(".")
+            if filename.startswith(".") and len(parts) > 2:
+                ext = parts[-1].lower()
+            else:
+                ext = ""
         else:
             ext = ""
+
         exts.append(ext)
 
     return dict(Counter(exts))
@@ -19,7 +28,6 @@ def deepest_path(paths: list[str]) -> str:
     if not paths:
         return ""
 
-    sorted_paths = sorted(paths, key=lambda p: (p.count("/"), p))
     max_depth = -1
     best_path = ""
     for p in sorted(paths):
